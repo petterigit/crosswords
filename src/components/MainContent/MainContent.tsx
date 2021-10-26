@@ -5,7 +5,7 @@ import { MainContentProps } from "../../types/propTypes";
 
 export const MainContent = ({ layoutStyle }: MainContentProps) => {
 	return (
-		<div className={`${layoutStyle}`}>
+		<div className={`main-content ${layoutStyle}`} data-testid="main-content">
 			<p> MainContent </p>
 		</div>
 	);

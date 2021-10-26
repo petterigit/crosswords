@@ -5,14 +5,12 @@ import { MainContent } from "./components/MainContent/MainContent";
 import "./global-styles/normalize.css";
 import "./global-styles/layout-styles.scss";
 
-function App() {
+export const App = () => {
 	return (
-		<div className="app-layout">
+		<div className="app-layout" data-testid="app">
 			<Header layoutStyle="header-layout" />
 			<MainContent layoutStyle="main-content-layout" />
 			<Footer layoutStyle="footer-layout" />
 		</div>
 	);
-}
-
-export default App;
+};
