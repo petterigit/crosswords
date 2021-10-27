@@ -34,7 +34,7 @@ test("Header contains logo & site name in the left corner", () => {
 
 	const headerName = header.querySelector(".header-site-name");
 	expect(headerName).toBeTruthy();
-	expect(headerName!.textContent).toBe("Crossing Words");
+	expect(headerName!.textContent).toBe("CROSSWORDS");
 });
 
 test("Header contains language, instructions, and settings menus", () => {
