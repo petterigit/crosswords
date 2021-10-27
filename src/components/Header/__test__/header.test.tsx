@@ -11,11 +11,30 @@ test("Header renders", () => {
 test("Header has a background that scales appropriately", () => {
 	const { getByTestId } = render(<Header />);
 	const header = getByTestId("header");
+	const headerStyle = window.getComputedStyle(header);
+
+	const background = headerStyle.getPropertyValue("background");
+	expect(background).toMatch(/12, 29, 14/);
+
+	const width = header.offsetWidth;
+	expect(width).toEqual(window.innerWidth);
+	const height = header.offsetHeight;
+	expect(height).toEqual(window.innerHeight / 18);
 });
 
 test("Header contains logo & site name in the left corner", () => {
 	const { getByTestId } = render(<Header />);
 	const header = getByTestId("header");
+
+	const logo = header.querySelector(".header-logo");
+	expect(logo).toBeTruthy();
+	const logoStyle = window.getComputedStyle(logo!);
+	expect(logoStyle.width).toBe("19px");
+	expect(logoStyle.height).toBe("19px");
+
+	const headerName = header.querySelector(".header-site-name");
+	expect(headerName).toBeTruthy();
+	expect(headerName!.textContent).toBe("Crossing Words");
 });
 
 test("Header contains language, instructions, and settings menus", () => {
