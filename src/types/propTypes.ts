@@ -7,3 +7,7 @@ export type HeaderProps = {
 export type FooterProps = {
 	layoutStyle?: string;
 };
+export type GameModeButtonProps = {
+	text: string;
+	id: string;
+};
