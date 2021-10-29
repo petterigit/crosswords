@@ -1,25 +1,25 @@
 import React from "react";
 import { App } from "../App";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 test("App renders an app div", () => {
-	const { getByTestId } = render(<App />);
+	render(<App />);
 
-	const app = getByTestId("app");
+	const app = screen.getByRole("main");
 	expect(app).toBeTruthy();
 });
 
-test("App contains header, main-content, and footer divs", () => {
-	const { getByTestId } = render(<App />);
+test("App renders child components", () => {
+	render(<App />);
 
-	const app = getByTestId("app");
+	const app = screen.getByRole("main");
 
-	const header = app.querySelector(".header");
+	const header = screen.getByRole("banner");
 	expect(header).toBeTruthy();
 
-	const mainContent = app.querySelector(".main-content");
+	const mainContent = screen.getByTitle("Main Content");
 	expect(mainContent).toBeTruthy();
 
-	const footer = app.querySelector(".footer");
+	const footer = screen.getByRole("contentinfo");
 	expect(footer).toBeTruthy();
 });

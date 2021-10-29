@@ -1,17 +1,16 @@
 import React from "react";
 import { MainContent } from "../MainContent";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 test("MainContent renders", () => {
-	const { getByTestId } = render(<MainContent />);
-	const mainContent = getByTestId("main-content");
+	render(<MainContent />);
+	const mainContent = screen.getByTitle("Main Content");
 	expect(mainContent).toBeTruthy();
 });
 
-test("Game mode selection renders", () => {
-	const { getByTestId } = render(<MainContent />);
-	const mainContent = getByTestId("main-content");
+test("Children Components Render", () => {
+	render(<MainContent />);
 
-	const gameModeContainer = mainContent.querySelector(".main-game-mode-container");
+	const gameModeContainer = screen.getByTitle("Game Mode Selection");
 	expect(gameModeContainer).toBeTruthy();
 });

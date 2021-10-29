@@ -1,11 +1,11 @@
 import React from "react";
 import { GameModeButton } from "../GameModeButton";
 import { GameModeContainer } from "../GameModeContainer";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 test("GameModeButton renders", () => {
-	const { getByTestId } = render(<GameModeButton text="" id="" />);
-	const gameModeButton = getByTestId("game-mode-button");
+	render(<GameModeButton text="" />);
+	const gameModeButton = screen.getByTitle("Game Mode Button");
 	expect(gameModeButton).toBeTruthy();
 });
 
@@ -15,18 +15,18 @@ test("GameModeButton takes in props", () => {
 		{ id: "2", text: "Play Vs. A Bot" },
 		{ id: "3", text: "Word Checker" },
 	];
-
-	const { getByTestId } = render(
+	render(
 		<div>
-			{buttons.map((button) => {
-				<GameModeButton text={button.text} id={button.id} />;
-			})}
+			{buttons.map((button) => (
+				<GameModeButton text={button.text} key={button.id} />
+			))}
 		</div>
 	);
 
-	for (const button of buttons) {
-		const buttonEl = getByTestId(`game-mode-button-${button.id}`);
+	const renderedButtons = screen.getAllByTitle("Game Mode Button");
+	for (let i = 0; i < buttons.length; i++) {
+		const buttonEl = renderedButtons[i];
 		expect(buttonEl).toBeTruthy();
-		expect(buttonEl.textContent).toBe(button.text);
+		expect(buttonEl.textContent).toBe(buttons[i].text);
 	}
 });

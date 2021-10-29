@@ -1,0 +1,10 @@
+@use "../../global-styles/colors.scss" as colors;
+
+.header-style {
+	background-color: colors.$header-background;
+}
+
+.header-logo {
+	width: 19px;
+	height: 19px;
+}

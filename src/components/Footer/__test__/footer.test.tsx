@@ -1,17 +1,17 @@
 import React from "react";
 import { Footer } from "../Footer";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import packageJSON from "../../../../package.json";
 
 test("Footer renders", () => {
-	const { getByTestId } = render(<Footer />);
-	const footer = getByTestId("footer");
+	render(<Footer />);
+	const footer = screen.getByRole("contentinfo");
 	expect(footer).toBeTruthy();
 });
 
 test("Footer has version info", () => {
-	const { getByTestId } = render(<Footer />);
-	const footer = getByTestId("footer");
+	render(<Footer />);
+	const footer = screen.getByRole("contentinfo");
 
 	const pageInfo = footer.querySelector(".footer-page-info-text");
 	expect(pageInfo).toBeTruthy();
@@ -20,8 +20,8 @@ test("Footer has version info", () => {
 });
 
 test("Copyright info", () => {
-	const { getByTestId } = render(<Footer />);
-	const footer = getByTestId("footer");
+	render(<Footer />);
+	const footer = screen.getByRole("contentinfo");
 
 	const copyrightInfo = footer.querySelector(".footer-copyright-info-text");
 	const date = new Date();

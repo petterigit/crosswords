@@ -7,10 +7,10 @@ import "./global-styles/layout-styles.scss";
 
 export const App = () => {
 	return (
-		<div className="app-layout" data-testid="app">
+		<main className="app-layout">
 			<Header layoutStyle="header-layout" />
 			<MainContent layoutStyle="main-content-layout" />
 			<Footer layoutStyle="footer-layout" />
-		</div>
+		</main>
 	);
 };

@@ -9,5 +9,4 @@ export type FooterProps = {
 };
 export type GameModeButtonProps = {
 	text: string;
-	id: string;
 };

@@ -1,13 +1,10 @@
 import React from "react";
-import { InstructionMenu } from "../InstructionMenu";
-import { render } from "@testing-library/react";
+import { InstructionsMenu } from "../InstructionsMenu";
+import { render, screen } from "@testing-library/react";
 
 test("Instructions Menu renders", () => {
-	const { getByTestId } = render(<InstructionMenu />);
-	const instructionsMenu = getByTestId("header-instructions-menu");
+	render(<InstructionsMenu />);
+	const instructionsMenu = screen.getByTitle("Instructions");
 	expect(instructionsMenu).toBeTruthy();
-
-	const placeHolderText = instructionsMenu.querySelector(".instructions-menu-placeholder");
-	expect(placeHolderText).toBeTruthy();
-	expect(placeHolderText!.textContent).toBe("Instructions Coming Soon!");
+	expect(instructionsMenu!.textContent).toBe("Instructions Coming Soon!");
 });
