@@ -21,12 +21,12 @@
 	height: 19px;
 }
 
-.header-menu {
-}
-.header-menu:hover {
+.header-menu-button:hover {
 	cursor: pointer;
 }
-
+.header-menu-button:focus {
+	background: colors.$button-light;
+}
 .header-menu-drop {
 	position: absolute;
 	display: flex;

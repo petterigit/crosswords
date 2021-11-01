@@ -20,9 +20,12 @@
 }
 
 .game-mode-button:link,
-:visited,
-:focus {
+.game-mode-button:visited {
 	background: colors.$button-light;
+}
+
+.game-mode-button:focus {
+	background: colors.$button-normal;
 }
 .game-mode-button:hover {
 	background: colors.$button-normal;
