@@ -349,3 +349,21 @@ template {
 [hidden] {
 	display: none;
 }
+
+/**
+* OWN ADDITIONS BEGIN HERE 
+*/
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+}
+
+address {
+	all: initial;
+}

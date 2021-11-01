@@ -1,0 +1,42 @@
+@use "./fonts.scss" as fonts;
+@use "./colors" as colors;
+
+body {
+	font-family: fonts.$font-stack;
+	color: colors.$font-dark;
+	background: colors.$main-background;
+}
+
+/*
+a:link {
+	color: $font-color-links;
+}
+a:visited {
+	color: $font-color-links-visited;
+}
+
+p {
+	font-size: $font-size-paragraph;
+}
+
+h1 {
+	color: $font-color-secondary;
+	font-size: $font-size-h1;
+}
+
+h2 {
+	color: $font-color-secondary;
+	font-size: $font-size-h2;
+}
+
+li {
+	font-size: $font-size-li;
+}
+
+*/
+
+/* Zero-Width Space for better accessibility */
+// https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#accessibility_concerns
+li::before {
+	content: "\200B";
+}

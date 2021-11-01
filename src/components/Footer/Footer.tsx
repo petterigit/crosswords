@@ -7,6 +7,7 @@ import { FooterProps } from "../../types/propTypes";
 export const Footer = ({ layoutStyle }: FooterProps) => {
 	return (
 		<footer className={`footer ${layoutStyle}`} role="contentinfo">
+			<div className="footer-left-container" />
 			<div className="footer-page-info-text">
 				<p>Version {packageJSON.version}</p>
 			</div>

@@ -6,9 +6,21 @@
 	grid-template-rows: 1fr 16fr 1fr;
 }
 .header-layout {
-	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
 }
+
 .main-content-layout {
+	display: flex;
+	align-items: center;
 }
 .footer-layout {
+	display: flex;
+	justify-content: space-between;
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
 }

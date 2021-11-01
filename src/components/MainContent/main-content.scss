@@ -1,0 +1,33 @@
+@use "./../../global-styles/colors" as colors;
+
+.main-game-mode-container {
+	ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.game-mode-button {
+	border-radius: 4px;
+	text-decoration: none;
+	display: inline-block;
+	width: 12em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+	line-height: 3;
+}
+
+.game-mode-button:link,
+:visited,
+:focus {
+	background: colors.$button-light;
+}
+.game-mode-button:hover {
+	background: colors.$button-normal;
+}
+.game-mode-button:active {
+	background: colors.$button-dark;
+	color: colors.$font-light;
+}

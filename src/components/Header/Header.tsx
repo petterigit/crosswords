@@ -9,13 +9,18 @@ import { SettingsMenu } from "./SettingsMenu";
 export const Header = ({ layoutStyle }: HeaderProps) => {
 	return (
 		<header className={`header-style ${layoutStyle}`}>
-			<div className="header-logo" />
-			<div className="header-site-name">
-				<p>CROSSWORDS</p>
+			<div className="header-left-container">
+				<div className="header-logo" />
+				<div className="header-site-name">
+					<p>CROSSWORDS</p>
+				</div>
 			</div>
-			<LanguageMenu />
-			<InstructionsMenu />
-			<SettingsMenu />
+
+			<div className="header-right-container">
+				<LanguageMenu />
+				<InstructionsMenu />
+				<SettingsMenu />
+			</div>
 		</header>
 	);
 };

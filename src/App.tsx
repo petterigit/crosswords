@@ -4,6 +4,7 @@ import { Header } from "./components/Header/Header";
 import { MainContent } from "./components/MainContent/MainContent";
 import "./global-styles/normalize.css";
 import "./global-styles/layout-styles.scss";
+import "./global-styles/global-styles.scss";
 
 export const App = () => {
 	return (

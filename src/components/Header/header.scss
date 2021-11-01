@@ -1,7 +1,16 @@
 @use "../../global-styles/colors.scss" as colors;
 
 .header-style {
+	color: colors.$font-light;
 	background-color: colors.$header-background;
+}
+
+.header-left-container {
+	display: flex;
+}
+
+.header-right-container {
+	display: flex;
 }
 
 .header-logo {
