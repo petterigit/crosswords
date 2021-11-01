@@ -1,4 +1,5 @@
 @use "../../global-styles/colors.scss" as colors;
+@use "../../global-styles/layout-styles.scss" as layouts;
 
 .header-style {
 	color: colors.$font-light;
@@ -11,9 +12,27 @@
 
 .header-right-container {
 	display: flex;
+	column-gap: 1em;
+	width: layouts.$header-menu-width;
 }
 
 .header-logo {
 	width: 19px;
 	height: 19px;
+}
+
+.header-menu {
+}
+.header-menu:hover {
+	cursor: pointer;
+}
+
+.header-menu-drop {
+	position: absolute;
+	display: flex;
+
+	background: colors.$header-background;
+	width: layouts.$header-menu-width;
+	right: 0;
+	padding-right: layouts.$content-padding-right;
 }

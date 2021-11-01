@@ -11,6 +11,6 @@ export type GameModeButtonProps = {
 	text: string;
 };
 export type HeaderMenuProps = {
-	contents: string;
+	contents: string[];
 	title: string;
 };
