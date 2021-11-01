@@ -52,6 +52,6 @@ test("Rendered menus are interactable", async () => {
 	fireEvent.click(settingsMenu);
 	await waitFor(() => screen.getByTitle("Settings Menu Dropdown"));
 	expect(screen.getByTitle("Settings Menu Dropdown")).toHaveTextContent("Settings Menu Coming Soon!");
-	fireEvent.click(instructionMenu);
-	await waitForElementToBeRemoved(() => screen.getByTitle("Instruction Menu Dropdown"));
+	fireEvent.click(settingsMenu);
+	await waitForElementToBeRemoved(() => screen.getByTitle("Setting Menu Dropdown"));
 });
