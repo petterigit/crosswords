@@ -14,3 +14,7 @@ export type HeaderMenuProps = {
 	contents: string[];
 	title: string;
 };
+export type HeaderDropDownMenuProps = {
+	title: string;
+	contents: string[];
+};
