@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 test("MainContent renders", () => {
 	render(<MainContent />);
-	const mainContent = screen.getByTitle("Main Content");
+	const mainContent = screen.getByRole("main");
 	expect(mainContent).toBeTruthy();
 });
 
