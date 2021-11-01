@@ -34,24 +34,38 @@ test("Header contains language, instructions, and settings menus", () => {
 test("Rendered menus are interactable", async () => {
 	render(<Header />);
 
+	/* Get Menus */
 	const languageMenu = screen.getByTitle("Language Menu");
-	fireEvent.click(languageMenu);
-	await waitFor(() => screen.getByTitle("Language Menu Dropdown"));
-	expect(screen.getByTitle("Language Menu Dropdown")).toHaveTextContent("Language Menu Coming Soon!");
-	fireEvent.click(languageMenu);
-	await waitForElementToBeRemoved(() => screen.getByTitle("Language Menu Dropdown"));
-
 	const instructionMenu = screen.getByTitle("Instruction Menu");
-	fireEvent.click(instructionMenu);
-	await waitFor(() => screen.getByTitle("Instruction Menu Dropdown"));
-	expect(screen.getByTitle("Instruction Menu Dropdown")).toHaveTextContent("InstructionLanguage Menu Coming Soon!");
-	fireEvent.click(instructionMenu);
-	await waitForElementToBeRemoved(() => screen.getByTitle("Instruction Menu Dropdown"));
-
 	const settingsMenu = screen.getByTitle("Settings Menu");
+
+	/* Show Dropdown menus */
+	fireEvent.click(languageMenu);
+	fireEvent.click(instructionMenu);
 	fireEvent.click(settingsMenu);
+
+	/* Make sure dropdowns are shown */
+	await waitFor(() => screen.getByTitle("Language Menu Dropdown"));
+	await waitFor(() => screen.getByTitle("Instruction Menu Dropdown"));
 	await waitFor(() => screen.getByTitle("Settings Menu Dropdown"));
-	expect(screen.getByTitle("Settings Menu Dropdown")).toHaveTextContent("Settings Menu Coming Soon!");
+
+	/* Get Dropdown menus */
+	const languageDropDown = screen.getByTitle("Language Menu Dropdown");
+	const instructionDropDown = screen.getByTitle("Instruction Menu Dropdown");
+	const settingsDropDown = screen.getByTitle("Settings Menu Dropdown");
+
+	/* Assert dropdown contents */
+	expect(languageDropDown).toHaveTextContent("Language Menu Coming Soon!");
+	expect(instructionDropDown).toHaveTextContent("Instruction Menu Coming Soon!");
+	expect(settingsDropDown).toHaveTextContent("Settings Menu Coming Soon!");
+
+	/* Hide Dropdowns */
+	fireEvent.click(languageMenu);
+	fireEvent.click(instructionMenu);
 	fireEvent.click(settingsMenu);
-	await waitForElementToBeRemoved(() => screen.getByTitle("Setting Menu Dropdown"));
+
+	/* Assert hidden dropdowns */
+	expect(languageDropDown).not.toBeInTheDocument();
+	expect(instructionDropDown).not.toBeInTheDocument();
+	expect(settingsDropDown).not.toBeInTheDocument();
 });

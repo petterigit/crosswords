@@ -13,13 +13,13 @@ export const Header = ({ layoutStyle }: HeaderProps) => {
 			</div>
 			<ul className="header-right-container">
 				<li>
-					<HeaderMenu contents="Language Selector coming soon!" title="Language Menu" />
+					<HeaderMenu contents="Language Menu Coming Soon!" title="Language Menu" />
 				</li>
 				<li>
-					<HeaderMenu contents="Settings coming soon!" title="Settings Menu" />
+					<HeaderMenu contents="Settings Menu Coming Soon!" title="Settings Menu" />
 				</li>
 				<li>
-					<HeaderMenu contents="Instructions coming soon!" title="Instruction Menu" />
+					<HeaderMenu contents="Instruction Menu Coming Soon!" title="Instruction Menu" />
 				</li>
 			</ul>
 		</header>
