@@ -10,3 +10,7 @@ export type FooterProps = {
 export type GameModeButtonProps = {
 	text: string;
 };
+export type HeaderMenuProps = {
+	contents: string;
+	title: string;
+};

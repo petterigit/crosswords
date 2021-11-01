@@ -2,25 +2,26 @@ import React from "react";
 import "./header.scss";
 
 import { HeaderProps } from "../../types/propTypes";
-import { LanguageMenu } from "./LanguageMenu";
-import { InstructionsMenu } from "./InstructionsMenu";
-import { SettingsMenu } from "./SettingsMenu";
+import { HeaderMenu } from "./HeaderMenu";
 
 export const Header = ({ layoutStyle }: HeaderProps) => {
 	return (
 		<header className={`header-style ${layoutStyle}`}>
 			<div className="header-left-container">
 				<div className="header-logo" />
-				<div className="header-site-name">
-					<p>CROSSWORDS</p>
-				</div>
+				<p className="header-site-name">CROSSWORDS</p>
 			</div>
-
-			<div className="header-right-container">
-				<LanguageMenu />
-				<InstructionsMenu />
-				<SettingsMenu />
-			</div>
+			<ul className="header-right-container">
+				<li>
+					<HeaderMenu contents="Language Selector coming soon!" title="Language Menu" />
+				</li>
+				<li>
+					<HeaderMenu contents="Settings coming soon!" title="Settings Menu" />
+				</li>
+				<li>
+					<HeaderMenu contents="Instructions coming soon!" title="Instruction Menu" />
+				</li>
+			</ul>
 		</header>
 	);
 };
