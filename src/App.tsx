@@ -8,10 +8,10 @@ import "./global-styles/global-styles.scss";
 
 export const App = () => {
 	return (
-		<main className="app-layout">
+		<div className="app-layout" title="Page">
 			<Header layoutStyle="header-layout" />
 			<MainContent layoutStyle="main-content-layout" />
 			<Footer layoutStyle="footer-layout" />
-		</main>
+		</div>
 	);
 };

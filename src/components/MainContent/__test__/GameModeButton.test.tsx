@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 
 test("GameModeButton renders", () => {
 	render(<GameModeButton text="" />);
-	const gameModeButton = screen.getByTitle("Game Mode Selection");
+	const gameModeButton = screen.getByTitle("Game Mode Selection Button");
 	expect(gameModeButton).toBeTruthy();
 });
 
@@ -23,7 +23,7 @@ test("GameModeButton takes in props", () => {
 		</div>
 	);
 
-	const renderedButtons = screen.getAllByTitle("Game Mode Selection");
+	const renderedButtons = screen.getAllByTitle("Game Mode Selection Button");
 	for (let i = 0; i < buttons.length; i++) {
 		const buttonEl = renderedButtons[i];
 		expect(buttonEl).toBeTruthy();

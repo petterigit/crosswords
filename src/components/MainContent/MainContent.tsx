@@ -6,8 +6,8 @@ import { GameModeContainer } from "./GameModeContainer";
 
 export const MainContent = ({ layoutStyle }: MainContentProps) => {
 	return (
-		<div className={`main-content ${layoutStyle}`} role="main">
+		<main className={`main-content ${layoutStyle}`}>
 			<GameModeContainer />
-		</div>
+		</main>
 	);
 };

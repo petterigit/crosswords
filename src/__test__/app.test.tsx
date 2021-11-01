@@ -5,19 +5,17 @@ import { render, screen } from "@testing-library/react";
 test("App renders an app div", () => {
 	render(<App />);
 
-	const app = screen.getByRole("main");
+	const app = screen.getByTitle("Page");
 	expect(app).toBeTruthy();
 });
 
 test("App renders child components", () => {
 	render(<App />);
 
-	const app = screen.getByRole("main");
-
 	const header = screen.getByRole("banner");
 	expect(header).toBeTruthy();
 
-	const mainContent = screen.getByTitle("Main Content");
+	const mainContent = screen.getByRole("main");
 	expect(mainContent).toBeTruthy();
 
 	const footer = screen.getByRole("contentinfo");

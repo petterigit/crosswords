@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../Header";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, waitForElementToBeRemoved } from "@testing-library/react";
 
 test("Header renders", () => {
 	render(<Header />);
@@ -22,12 +22,36 @@ test("Header contains logo & site name in the left corner", () => {
 
 test("Header contains language, instructions, and settings menus", () => {
 	render(<Header />);
-	const header = screen.getByRole("banner");
 
-	const languageMenu = header.querySelector(".header-language-menu");
+	const languageMenu = screen.getByTitle("Language Menu");
 	expect(languageMenu).toBeTruthy();
-	const instructionsMenu = header.querySelector(".header-instructions-menu");
-	expect(instructionsMenu).toBeTruthy();
-	const settingsMenu = header.querySelector(".header-settings-menu");
+	const instructionMenu = screen.getByTitle("Instruction Menu");
+	expect(instructionMenu).toBeTruthy();
+	const settingsMenu = screen.getByTitle("Settings Menu");
 	expect(settingsMenu).toBeTruthy();
+});
+
+test("Rendered menus are interactable", async () => {
+	render(<Header />);
+
+	const languageMenu = screen.getByTitle("Language Menu");
+	fireEvent.click(languageMenu);
+	await waitFor(() => screen.getByTitle("Language Menu Dropdown"));
+	expect(screen.getByTitle("Language Menu Dropdown")).toHaveTextContent("Language Menu Coming Soon!");
+	fireEvent.click(languageMenu);
+	await waitForElementToBeRemoved(() => screen.getByTitle("Language Menu Dropdown"));
+
+	const instructionMenu = screen.getByTitle("Instruction Menu");
+	fireEvent.click(instructionMenu);
+	await waitFor(() => screen.getByTitle("Instruction Menu Dropdown"));
+	expect(screen.getByTitle("Instruction Menu Dropdown")).toHaveTextContent("InstructionLanguage Menu Coming Soon!");
+	fireEvent.click(instructionMenu);
+	await waitForElementToBeRemoved(() => screen.getByTitle("Instruction Menu Dropdown"));
+
+	const settingsMenu = screen.getByTitle("Settings Menu");
+	fireEvent.click(settingsMenu);
+	await waitFor(() => screen.getByTitle("Settings Menu Dropdown"));
+	expect(screen.getByTitle("Settings Menu Dropdown")).toHaveTextContent("Settings Menu Coming Soon!");
+	fireEvent.click(instructionMenu);
+	await waitForElementToBeRemoved(() => screen.getByTitle("Instruction Menu Dropdown"));
 });
