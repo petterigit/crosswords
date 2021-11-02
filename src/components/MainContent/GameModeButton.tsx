@@ -5,7 +5,7 @@ import { GameModeButtonProps } from "../../types/propTypes";
 
 export const GameModeButton = ({ text }: GameModeButtonProps) => {
 	return (
-		<a className="game-mode-button" title="Game Mode Selection Button" href="./">
+		<a className="game-mode-button" title={`${text} Button`} href="./">
 			{text}
 		</a>
 	);
