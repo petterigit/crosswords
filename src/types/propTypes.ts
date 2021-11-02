@@ -11,10 +11,10 @@ export type GameModeButtonProps = {
 	text: string;
 };
 export type HeaderMenuProps = {
-	contents: string[];
+	children: JSX.Element | JSX.Element[];
 	title: string;
 };
 export type HeaderDropDownMenuProps = {
 	title: string;
-	contents: string[];
+	children: JSX.Element | JSX.Element[];
 };

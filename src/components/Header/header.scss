@@ -12,6 +12,7 @@
 
 .header-right-container {
 	display: flex;
+	align-items: center;
 	column-gap: 1em;
 	width: layouts.$header-menu-width;
 }

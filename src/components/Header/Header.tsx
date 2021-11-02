@@ -12,15 +12,15 @@ export const Header = ({ layoutStyle }: HeaderProps) => {
 				<p className="header-site-name">CROSSWORDS</p>
 			</div>
 			<ul className="header-right-container">
-				<li key={1}>
-					<HeaderMenu contents={["Language Menu Coming Soon!"]} title="Language Menu" />
-				</li>
-				<li key={2}>
-					<HeaderMenu contents={["Settings Menu Coming Soon!"]} title="Settings Menu" />
-				</li>
-				<li key={3}>
-					<HeaderMenu contents={["Instruction Menu Coming Soon!"]} title="Instruction Menu" />
-				</li>
+				<HeaderMenu title="Language Menu" key={1}>
+					<li role="menuitem">Language Menu Coming Soon!</li>
+				</HeaderMenu>
+				<HeaderMenu title="Settings Menu">
+					<li role="menuitem">Settings Menu Coming Soon!</li>
+				</HeaderMenu>
+				<HeaderMenu title="Instruction Menu">
+					<li role="menuitem">Instruction Menu Coming Soon!</li>
+				</HeaderMenu>
 			</ul>
 		</header>
 	);
