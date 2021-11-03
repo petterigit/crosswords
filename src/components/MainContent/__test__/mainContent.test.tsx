@@ -25,7 +25,7 @@ test("Child Components Render", () => {
 	expect(gameModeContainer).toBeTruthy();
 });
 
-/* TODO: Can't find element after user Event */
+/* TODO: Can't find element after user Event
 test("Play Along navigation works", () => {
 	render(
 		<Router>
