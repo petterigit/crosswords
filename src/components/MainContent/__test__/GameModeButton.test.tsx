@@ -1,9 +1,14 @@
 import React from "react";
+import { MemoryRouter as Router } from "react-router-dom";
 import { GameModeButton } from "../GameModeButton";
 import { render, screen } from "@testing-library/react";
 
 test("GameModeButton renders", () => {
-	render(<GameModeButton path="/" text="Game Mode 1" />);
+	render(
+		<Router>
+			<GameModeButton path="/" text="Game Mode 1" />
+		</Router>
+	);
 	const gameModeButton = screen.getByTitle("Game Mode 1 Button");
 	expect(gameModeButton).toBeTruthy();
 });
@@ -15,11 +20,11 @@ test("GameModeButton takes in props", () => {
 		{ id: "3", text: "Word Checker" },
 	];
 	render(
-		<div>
+		<Router>
 			{buttons.map((button) => (
 				<GameModeButton path="/" text={button.text} key={button.id} />
 			))}
-		</div>
+		</Router>
 	);
 
 	for (let i = 0; i < buttons.length; i++) {

@@ -7,14 +7,20 @@ import { GameModeButtonProps } from "../../types/propTypes";
 
 export const GameModeButton = ({ text, path }: GameModeButtonProps) => {
 	return (
-		<Link to={path} component={buttonLink}>
+		<Link to={path} component={buttonLink} title={`${text} Button`}>
 			{text}
 		</Link>
 	);
 };
 
-const buttonLink = React.forwardRef<HTMLAnchorElement>((props, ref) => (
-	<a ref={ref} className="game-mode-button" {...props}>
-		{props.children}
+type buttonLinkProps = {
+	navigate: string;
+	children: JSX.Element | JSX.Element[];
+	rest: React.ReactNode;
+};
+
+const buttonLink = React.forwardRef<HTMLAnchorElement, buttonLinkProps>(({ navigate, children, ...rest }, ref) => (
+	<a ref={ref} className="game-mode-button" {...rest}>
+		{children}
 	</a>
 ));
