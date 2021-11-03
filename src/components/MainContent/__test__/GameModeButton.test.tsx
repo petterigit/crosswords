@@ -1,6 +1,5 @@
 import React from "react";
 import { GameModeButton } from "../GameModeButton";
-import { GameModeContainer } from "../GameModeContainer";
 import { render, screen } from "@testing-library/react";
 
 test("GameModeButton renders", () => {
