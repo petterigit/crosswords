@@ -9,6 +9,7 @@ export type FooterProps = {
 };
 export type GameModeButtonProps = {
 	text: string;
+	path: string;
 };
 export type HeaderMenuProps = {
 	children: JSX.Element | JSX.Element[];

@@ -3,7 +3,7 @@ import { GameModeButton } from "../GameModeButton";
 import { render, screen } from "@testing-library/react";
 
 test("GameModeButton renders", () => {
-	render(<GameModeButton text="Game Mode 1" />);
+	render(<GameModeButton path="/" text="Game Mode 1" />);
 	const gameModeButton = screen.getByTitle("Game Mode 1 Button");
 	expect(gameModeButton).toBeTruthy();
 });
@@ -17,7 +17,7 @@ test("GameModeButton takes in props", () => {
 	render(
 		<div>
 			{buttons.map((button) => (
-				<GameModeButton text={button.text} key={button.id} />
+				<GameModeButton path="/" text={button.text} key={button.id} />
 			))}
 		</div>
 	);
